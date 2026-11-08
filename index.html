@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7 Caption Styles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" data-cs-fonts href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Special+Elite&display=swap">
+<style>
+:root{--bg:#120d0a;--card:#1c1511;--line:#352a20;--ink:#f6efe6;--muted:#ad9d89;--accent:#f2b24c;--hl:#ffd23f;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:15px/1.5 'Inter Tight',system-ui,sans-serif;padding:28px 16px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font-size:clamp(30px,5.4vw,50px);font-weight:900;letter-spacing:-.035em;margin:0 0 6px;line-height:1.05}
+.sub{color:var(--muted);margin:0 0 26px;max-width:62ch}
+.sub b{color:var(--ink)}
+code{font:500 .9em 'JetBrains Mono',ui-monospace,monospace;background:#271e17;border:1px solid var(--line);padding:1px 6px;border-radius:6px;color:var(--ink)}
+.player{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start}
+.stage{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000}
+.big{height:min(74vh,760px)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.backdrop{position:absolute;inset:0;background:linear-gradient(165deg,#241634 0%,#5a2a3c 38%,#b4523a 70%,#e59a48 100%)}
+.backdrop::before,.backdrop::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.55}
+.backdrop::before{width:70%;aspect-ratio:1;left:-10%;top:12%;background:#ff9a5a;animation:drift 9s ease-in-out infinite alternate}
+.backdrop::after{width:55%;aspect-ratio:1;right:-12%;top:48%;background:#6b5bd6;animation:drift 11s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(12%,-8%) scale(1.1)}}
+.tag{position:absolute;left:10px;top:10px;z-index:5;font:600 11px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.45);color:#fff;padding:4px 8px;border-radius:99px}
+.panel{display:flex;flex-direction:column;gap:20px;min-width:0}
+.lbl{font:600 11px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.styles{display:grid;gap:8px}
+.sbtn{display:grid;gap:2px;text-align:left;background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:10px 12px;cursor:pointer;font:inherit}
+.sbtn b{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.sbtn span{color:var(--muted);font-size:13px;line-height:1.4}
+.sbtn[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 14px;border-radius:99px;font:600 13px 'Inter Tight',sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);color:#1a1006;border-color:var(--accent)}
+.sw{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.sw[aria-pressed=true]{border-color:var(--ink);box-shadow:0 0 0 2px var(--bg) inset}
+label.rng{display:grid;gap:4px;font-weight:700;font-size:13px;max-width:360px}
+label.rng span{display:flex;justify-content:space-between}
+label.rng b{font:500 12px 'JetBrains Mono',monospace;color:var(--accent)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.file{display:inline-flex;align-items:center;gap:6px}
+.file input{display:none}
+.hint{color:var(--muted);font-size:13px;margin:6px 0 0}
+button:focus-visible,.file:focus-within{outline:2px solid #86b9ff;outline-offset:2px}
+h2{font-size:22px;font-weight:900;letter-spacing:-.02em;margin:48px 0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:20px 14px;margin-top:16px}
+@media (min-width:900px){.grid{grid-template-columns:repeat(7,minmax(0,1fr))}}
+.tile code{overflow-wrap:anywhere}
+.tile{display:flex;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left}
+.tile .name{font-weight:800;font-size:14px}
+.tile code{font-size:11.5px;align-self:flex-start}
+.foot{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:14px;max-width:70ch}
+.foot a{color:var(--ink)}
+@media (max-width:760px){.player{grid-template-columns:1fr}.big{height:auto;width:100%;max-width:420px;margin:0 auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <h1>7 free caption styles</h1>
+ <p class="sub">Drop your video into Claude, type <code>/captions pop-sticker</code> (or any style below) and get the video back with captions burned in. This page is the live preview: <b>load your own video and its words file</b> to see each style on you.</p>
+
+ <section class="player">
+  <div class="stage big" id="main"><div class="backdrop" id="bd"></div><span class="tag" id="mtag">Sample line · stand-in background</span></div>
+  <div class="panel">
+   <div><p class="lbl">Style</p><div class="styles" id="styles"></div></div>
+   <div id="optBox" hidden><p class="lbl">Retro Typer box</p><div class="row"><button class="chip" data-box="0" aria-pressed="true">No box</button><button class="chip" data-box="1" aria-pressed="false">Hazy box</button></div></div>
+   <div><p class="lbl">Highlight colour</p><div class="row" id="hls"></div></div>
+   <label class="rng"><span>Height on screen <b id="yV">64%</b></span><input type="range" id="y" min="20" max="85" value="64"></label>
+   <label class="rng"><span>Size <b id="zV">100%</b></span><input type="range" id="z" min="60" max="160" step="5" value="100"></label>
+   <div><p class="lbl">Your video</p>
+    <div class="row">
+     <label class="chip file">Choose video<input type="file" id="fv" accept="video/*"></label>
+     <label class="chip file">Choose words file<input type="file" id="fw" accept=".json,application/json"></label>
+     <button class="chip" id="play">Pause</button><button class="chip" id="rst">Restart</button>
+    </div>
+    <p class="hint">No words file yet? Ask Claude: <code>/captions words my-video.mp4</code>. It writes <code>my-video.words.json</code> next to your video.</p>
+   </div>
+  </div>
+ </section>
+
+ <h2>All 7 at once</h2>
+ <p class="sub" style="margin:0">Tap one to load it in the big player.</p>
+ <div class="grid" id="grid"></div>
+
+ <p class="foot">This is the starter pack: captions sit on top of your video. The full studio (words behind your head, liquid glass, text on the walls of your room and 27 more styles) is coming. Follow <a href="https://instagram.com/vibha.in.progress">@vibha.in.progress</a> to hear first.</p>
+</div>
+
+<script src="captions.js"></script>
+<script>
+const SAMPLE=[{"w":"Seven","s":0.2,"e":0.46},{"w":"free","s":0.46,"e":0.78,"k":true},{"w":"caption","s":0.78,"e":1.1},{"w":"styles.","s":1.1,"e":1.62},{"w":"Drop","s":1.9,"e":2.1},{"w":"your","s":2.1,"e":2.26},{"w":"video","s":2.26,"e":2.62,"k":true,"br":true},{"w":"into","s":2.66,"e":2.86},{"w":"Claude,","s":2.86,"e":3.36,"k":true},{"w":"type","s":3.56,"e":3.8},{"w":"/captions","s":3.8,"e":4.4,"k":true,"br":true},{"w":"pick","s":4.52,"e":4.74},{"w":"a","s":4.74,"e":4.84},{"w":"style.","s":4.84,"e":5.4,"k":true}];
+const HLS=[['#ffd23f','Yellow'],['#ff7a59','Coral'],['#7cc4ff','Sky'],['#9ff0b8','Mint']];
+const $=id=>document.getElementById(id);
+const q=new URLSearchParams(location.search);
+let hl=q.get('hl')||'#ffd23f', style=q.get('style')||'pop-sticker', video=null, words=SAMPLE, paused=false;
+if(!CaptionStyles.STYLES.some(s=>s.id===style))style='pop-sticker';
+
+const main=CaptionStyles.create($('main'),{words,style,highlight:hl,y:+(q.get('y')||64)});
+$('y').value=q.get('y')||64;$('yV').textContent=$('y').value+'%';
+const tiles=CaptionStyles.STYLES.map(s=>{
+ const b=document.createElement('button');b.className='tile';b.setAttribute('aria-label','Load '+s.name);
+ b.innerHTML='<div class="stage"><div class="backdrop"></div></div><span class="name">'+s.name+'</span><code>/captions '+s.id+'</code>';
+ $('grid').appendChild(b);b.addEventListener('click',()=>{setStyle(s.id);$('main').scrollIntoView({behavior:'smooth',block:'center'})});
+ return CaptionStyles.create(b.querySelector('.stage'),{words:SAMPLE,style:s.id,highlight:hl});
+});
+CaptionStyles.STYLES.forEach(s=>{const b=document.createElement('button');b.className='sbtn';b.dataset.id=s.id;b.innerHTML='<b>'+s.name+'</b><span>'+s.look+'</span>';b.addEventListener('click',()=>setStyle(s.id));$('styles').appendChild(b)});
+function setStyle(id){style=id;main.setStyle(id);[...$('styles').children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id));$('optBox').hidden=id!=='retro-typer'}
+setStyle(style);
+HLS.forEach(([v,l])=>{const b=document.createElement('button');b.className='sw';b.style.background=v;b.title=l;b.setAttribute('aria-label','Highlight '+l);b.addEventListener('click',()=>setHL(v));$('hls').appendChild(b)});
+function setHL(v){hl=v;main.setHighlight(v);tiles.forEach(t=>t.setHighlight(v));[...$('hls').children].forEach((b,i)=>b.setAttribute('aria-pressed',HLS[i][0]===v))}
+setHL(hl);
+$('y').addEventListener('input',e=>{$('yV').textContent=e.target.value+'%';main.setY(e.target.value)});
+$('z').addEventListener('input',e=>{$('zV').textContent=e.target.value+'%';main.setSize(e.target.value/100)});
+document.querySelectorAll('[data-box]').forEach(b=>b.addEventListener('click',()=>{main.setOption('box',b.dataset.box==='1');document.querySelectorAll('[data-box]').forEach(x=>x.setAttribute('aria-pressed',x===b))}));
+
+/* your own video */
+function useVideo(src,label){if(video)video.remove();video=document.createElement('video');video.src=src;video.playsInline=true;video.loop=true;video.muted=false;video.controls=false;
+ $('main').prepend(video);$('bd').hidden=true;$('mtag').textContent=label;main.reset();video.play().catch(()=>{video.muted=true;video.play().catch(()=>{})});paused=false;$('play').textContent='Pause'}
+function useWords(w){words=w;main.setWords(w);if(!video)$('mtag').textContent='Your words · stand-in background'}
+$('fv').addEventListener('change',e=>{const f=e.target.files[0];if(f)useVideo(URL.createObjectURL(f),f.name)});
+$('fw').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{useWords(JSON.parse(await f.text()))}catch(err){alert('That words file could not be read: '+err.message)}});
+if(q.get('video'))useVideo(q.get('video'),q.get('video').split('/').pop());
+if(q.get('words'))fetch(q.get('words')).then(r=>r.json()).then(useWords).catch(()=>{});
+$('play').addEventListener('click',()=>{paused=!paused;$('play').textContent=paused?'Play':'Pause';if(video){paused?video.pause():video.play()}else if(!paused)t0=performance.now()-tDemo*1000});
+$('rst').addEventListener('click',()=>{if(video){video.currentTime=0;video.play();paused=false;$('play').textContent='Pause'}t0=performance.now();main.reset()});
+
+/* clock: the video's time, or a looping demo clock */
+let t0=performance.now(),tDemo=0;const AT=q.get('at')==null?null:+q.get('at'); // ?at=1.3 freezes every player at that second
+CaptionStyles.fontsReady().then(()=>{
+ if(AT!=null)[main,...tiles].forEach(p=>{for(let x=0;x<AT;x+=1/30)p.seek(x)}); // play up to the frozen second
+ (function loop(){requestAnimationFrame(loop);
+ const loopLen=Math.max(main.duration,6)+.8, tl=(performance.now()/1000)%(Math.max(...tiles.map(x=>x.duration),6)+.8);
+ if(!paused&&!video)tDemo=((performance.now()-t0)/1000)%loopLen;
+ main.seek(AT!=null?AT:video?video.currentTime:tDemo);
+ tiles.forEach(x=>x.seek(AT!=null?AT:tl));
+})()});
+</script>
+</body>
+</html>

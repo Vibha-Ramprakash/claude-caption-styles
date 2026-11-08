@@ -1,0 +1,8 @@
+node_modules/
+.venv/
+.DS_Store
+*.mp4
+*.mov
+*.words.json
+!demo/sample.words.json
+*_still_*.png

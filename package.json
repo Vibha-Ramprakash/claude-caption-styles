@@ -1,0 +1,14 @@
+{
+  "name": "claude-caption-styles",
+  "version": "1.0.0",
+  "description": "7 free caption styles for vertical videos. Drop your video into Claude and type /captions.",
+  "private": true,
+  "license": "MIT",
+  "author": "Vibha Ramprakash (@vibha.in.progress)",
+  "scripts": {
+    "render": "node scripts/render.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "23.11.1"
+  }
+}

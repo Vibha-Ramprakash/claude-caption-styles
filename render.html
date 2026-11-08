@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Caption render</title>
+<!-- Used by scripts/render.js. Draws only the captions on a transparent page, one frame at a time. -->
+<link rel="stylesheet" data-cs-fonts href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Special+Elite&display=swap">
+<style>html,body{margin:0;background:transparent;overflow:hidden}#stage{position:fixed;inset:0}</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="captions.js"></script>
+<script>
+let cap = null;
+window.setup = async cfg => {
+  await CaptionStyles.fontsReady();
+  cap = CaptionStyles.create(document.getElementById('stage'), cfg);
+  return { lines: cap.phrases.length, duration: cap.duration, style: cap.style };
+};
+window.frame = t => { cap.seek(t); };
+</script>
+</body>
+</html>
