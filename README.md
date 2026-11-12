@@ -4,7 +4,7 @@ Free animated captions for Instagram Reels, TikTok and YouTube Shorts, made insi
 
 Made by [@vibha.in.progress](https://instagram.com/vibha.in.progress) 💛
 
-> **Want the full set?** These 7 are the free starter pack from **[Hop Studio, my AI video editing studio inside Claude](https://vibha.is/ai-video-studio?source=captions-repo)**: 30+ caption styles (words behind your head, liquid glass, captions on the walls of your room), 220+ video effects and 150 sound effects. It runs on the Claude plan you already have.
+> **Want the full set?** These 7 are the free starter pack from **[Hop Studio, my AI video editing studio inside Claude](https://vibha.is/ai-video-studio?source=captions-repo)**: 47 caption styles (words behind your head, liquid glass, captions on the walls of your room), 220+ video effects and 190+ sound effects. It runs on the Claude plan you already have.
 
 ![The 7 caption styles](assets/preview.jpg)
 
@@ -56,12 +56,21 @@ Open `index.html` in Chrome. All 7 play side by side. Click **Choose video** and
 
 ## Good to know
 
-- This is the starter pack: captions sit on top of your video. Words behind your head, liquid glass, text on the walls of your room and 23+ more caption styles are in **[Hop Studio](https://vibha.is/ai-video-studio?source=captions-repo)**, the AI video editing studio that runs inside Claude.
+- This is the starter pack: captions sit on top of your video. Words behind your head, liquid glass, text on the walls of your room and 40 more caption styles are in **[Hop Studio](https://vibha.is/ai-video-studio?source=captions-repo)**, the AI video editing studio that runs inside Claude.
 - iPhone HDR videos can look washed out. Export as SDR first, or set Settings > Camera > Formats > Most Compatible.
 - Free to use, MIT licence. A tag when you post is always appreciated 💛
 
-## More free tools for editing videos with Claude
+## Edit videos with Claude: the Hop Studio family
 
-- **[51 free video effects for Claude](https://github.com/Vibha-Ramprakash/claude-video-effects)**: orbit, spotlight, glass widgets, comment box and more. Type `/effects orbit`.
-- **[Hop Studio · AI video editing studio](https://vibha.is/ai-video-studio?source=captions-repo)**: the full studio with 220+ effects, 30+ caption styles, 150 sound effects and a free masterclass.
-- New styles every week on Instagram: [@vibha.in.progress](https://instagram.com/vibha.in.progress)
+**[Hop Studio, the AI video editor that lives inside Claude](https://vibha.is/ai-video-studio?source=caption-styles-repo)**: 220+ video effects, 47 caption styles, 190+ sound effects and creator-style templates for Instagram Reels, TikTok and YouTube Shorts, in one plugin. One payment, live setup with me.
+
+Free tools:
+- **[51 free video effects for Claude](https://github.com/Vibha-Ramprakash/claude-video-effects)**: orbit, spotlight, glass widgets and more. Type `/effects orbit`
+- **[7 motion style prompts for Claude Code](https://github.com/Vibha-Ramprakash/claude-motion-styles)**: copy-paste starters for motion graphics
+- **[The Claude video editor setup](https://github.com/Vibha-Ramprakash/claude-video-editor-setup)**: the exact 7 steps and 4 prompts
+- **[Free masterclass guide](https://github.com/Vibha-Ramprakash/masterclass)**: edit your videos with Claude, step by step
+- **[Fable 5.2 video editing prompts](https://github.com/Vibha-Ramprakash/fable-video-editing-guide)**: the 4 prompts from the reel
+- **[Remotion cinematic product video skill](https://github.com/Vibha-Ramprakash/remotion-cinematic-skill)**: kinetic product videos in code
+- **[Free video editing masterclass](https://vibha.is/free-masterclass?source=caption-styles-repo)**: set up your editing studio in Claude with me
+
+New effects every week on Instagram: [@vibha.in.progress](https://instagram.com/vibha.in.progress)
